@@ -3,7 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uso Wanai Visuals — Toronto Videographer & Cinematographer</title>
+<title>Uso Wanai Visuals — Toronto Videographer &amp; Cinematographer</title>
+<meta name="description" content="Toronto-based videographer and cinematographer. Real estate, brand, and fashion films shot on the Sony FX3 with a colour-managed S-Log3 pipeline.">
+<meta property="og:title" content="Uso Wanai Visuals — Toronto Videographer &amp; Cinematographer">
+<meta property="og:description" content="Real estate, brand, and fashion films shot on the Sony FX3. Toronto &amp; Ottawa.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preconnect" href="https://www.youtube.com">
 <style>
   :root {
     --bg: #0a0a0a;
@@ -13,35 +19,40 @@
     --text: #f2efe8;
     --text-dim: #9a958a;
     --rule: rgba(201, 168, 76, 0.18);
+    --maxw: 1180px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
   body {
     background: var(--bg);
     color: var(--text);
     font-family: "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
+
+  img { display: block; max-width: 100%; }
 
   a { color: var(--gold); text-decoration: none; }
   a:hover { text-decoration: underline; }
 
   .container {
-    max-width: 1280px;
+    max-width: var(--maxw);
     margin: 0 auto;
-    padding: 0 32px;
+    padding: 0 28px;
+    width: 100%;
   }
 
-  /* ---- Nav ---- */
+  /* ---------- Nav ---------- */
   header {
     position: sticky;
     top: 0;
-    z-index: 50;
-    background: rgba(10, 10, 10, 0.85);
-    backdrop-filter: blur(8px);
+    z-index: 60;
+    background: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--rule);
   }
 
@@ -49,174 +60,197 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 76px;
+    height: 68px;
+    gap: 16px;
   }
 
   .logo {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.25rem;
-    letter-spacing: 0.06em;
+    font-size: 1.05rem;
+    letter-spacing: 0.07em;
     color: var(--text);
+    white-space: nowrap;
   }
-
   .logo span { color: var(--gold); }
 
   .nav-links {
     display: flex;
-    gap: 36px;
-    font-size: 0.8rem;
+    align-items: center;
+    gap: 28px;
+    font-size: 0.72rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
   }
+  .nav-links a { color: var(--text-dim); transition: color 0.2s ease; }
+  .nav-links a:hover { color: var(--gold); text-decoration: none; }
 
-  .nav-links a {
-    color: var(--text-dim);
-    transition: color 0.2s ease;
+  .nav-cta {
+    border: 1px solid var(--gold-dim);
+    padding: 10px 18px;
+    color: var(--text) !important;
+  }
+  .nav-cta:hover { border-color: var(--gold); color: var(--gold) !important; }
+
+  @media (max-width: 760px) {
+    .nav-links a:not(.nav-cta) { display: none; }
   }
 
-  .nav-links a:hover {
-    color: var(--gold);
-    text-decoration: none;
-  }
-
-  @media (max-width: 640px) {
-    .nav-links { display: none; }
-  }
-
-  /* ---- Hero ---- */
-  .hero {
-    padding: 140px 32px 100px;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .hero .eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-
-  .hero h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: 400;
-    font-size: clamp(2.6rem, 8vw, 5.5rem);
-    line-height: 1.08;
-    max-width: 900px;
-    letter-spacing: 0.01em;
-  }
-
-  .hero h1 em {
-    font-style: italic;
-    color: var(--gold);
-  }
-
-  .hero p {
-    margin-top: 28px;
-    max-width: 540px;
-    color: var(--text-dim);
-    font-size: 1.05rem;
-    line-height: 1.7;
-  }
-
-  .hero .cta-row {
-    display: flex;
-    gap: 18px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-  }
-
+  /* ---------- Buttons ---------- */
   .btn {
     display: inline-block;
-    padding: 14px 30px;
-    font-size: 0.78rem;
+    padding: 15px 30px;
+    font-size: 0.76rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     border: 1px solid var(--gold-dim);
     color: var(--text);
-    transition: border-color 0.2s ease, color 0.2s ease;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
     cursor: pointer;
     background: none;
     font-family: inherit;
+    text-align: center;
+    min-height: 48px;
   }
-
-  .btn:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-    text-decoration: none;
-  }
+  .btn:hover { border-color: var(--gold); color: var(--gold); text-decoration: none; }
 
   .btn.primary {
     background: var(--gold);
     color: #0a0a0a;
     border-color: var(--gold);
+    font-weight: 700;
   }
+  .btn.primary:hover { background: transparent; color: var(--gold); }
 
-  .btn.primary:hover {
-    background: transparent;
-    color: var(--gold);
-  }
-
-  /* ---- Section shared ---- */
-  section { padding: 80px 32px; }
-
-  .section-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 24px;
-    margin-bottom: 48px;
-    flex-wrap: wrap;
-  }
-
-  .section-header h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: 400;
-    font-size: clamp(2rem, 5vw, 3.4rem);
-    letter-spacing: 0.02em;
-    color: var(--text);
-  }
-
-  .section-header .eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-  }
-
-  .section-header p {
-    color: var(--text-dim);
-    font-size: 0.95rem;
-    max-width: 360px;
-    line-height: 1.6;
-  }
-
-  /* ---- About ---- */
-  .about {
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 110px 28px 80px;
     border-bottom: 1px solid var(--rule);
   }
 
-  .about .container { max-width: 760px; }
-
-  .about p {
-    color: var(--text-dim);
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
+  .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 18px;
   }
 
-  /* ---- Film strip rule (signature element) ---- */
+  .hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: clamp(2.3rem, 7.5vw, 4.8rem);
+    line-height: 1.07;
+    max-width: 880px;
+    letter-spacing: 0.01em;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+
+  .hero .lede {
+    margin-top: 24px;
+    max-width: 560px;
+    color: var(--text-dim);
+    font-size: 1.03rem;
+    line-height: 1.7;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 14px;
+    margin-top: 34px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 520px) {
+    .cta-row .btn { flex: 1 1 100%; }
+  }
+
+  .hero-note {
+    margin-top: 22px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- Trust strip ---------- */
+  .trust {
+    border-bottom: 1px solid var(--rule);
+    padding: 0;
+  }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .trust-item {
+    padding: 26px 20px;
+    border-right: 1px solid var(--rule);
+    text-align: center;
+  }
+  .trust-item:last-child { border-right: 0; }
+  .trust-item strong {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 1.15rem;
+    color: var(--gold);
+    margin-bottom: 6px;
+    font-weight: 400;
+  }
+  .trust-item span {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  @media (max-width: 700px) {
+    .trust-grid { grid-template-columns: repeat(2, 1fr); }
+    .trust-item:nth-child(2) { border-right: 0; }
+    .trust-item:nth-child(1), .trust-item:nth-child(2) { border-bottom: 1px solid var(--rule); }
+    .trust-item { padding: 20px 12px; }
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding: 76px 28px; }
+
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .section-header h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: clamp(1.9rem, 5vw, 3.2rem);
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+  .section-header p {
+    color: var(--text-dim);
+    font-size: 0.93rem;
+    max-width: 380px;
+    line-height: 1.65;
+  }
+
+  /* ---------- About ---------- */
+  .about { border-bottom: 1px solid var(--rule); }
+  .about .container { max-width: 740px; }
+  .about p {
+    color: var(--text-dim);
+    font-size: 1.02rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  /* ---------- Filmstrip ---------- */
   .filmstrip-rule {
     display: flex;
     align-items: center;
     gap: 6px;
     height: 14px;
-    margin: 0 0 56px;
+    margin: 0 0 44px;
     overflow: hidden;
   }
-
   .filmstrip-rule::before,
   .filmstrip-rule::after {
     content: "";
@@ -224,35 +258,48 @@
     height: 1px;
     background: var(--rule);
   }
-
-  .filmstrip-rule .holes {
-    display: flex;
-    gap: 10px;
-    flex-shrink: 0;
-  }
-
+  .filmstrip-rule .holes { display: flex; gap: 10px; flex-shrink: 0; }
   .filmstrip-rule .holes span {
-    width: 6px;
-    height: 9px;
+    width: 6px; height: 9px;
     border-radius: 1px;
     border: 1px solid var(--gold-dim);
-    background: transparent;
   }
 
-  /* ---- Work Grid ---- */
-  .grid {
+  /* ---------- Work rows (orientation-aware) ---------- */
+  .subsection-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin: 0 0 28px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .row {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 28px;
-    margin-bottom: 96px;
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+  .row:last-child { margin-bottom: 0; }
+
+  /* landscape: 2 up desktop, 1 up mobile */
+  .row.wide { grid-template-columns: repeat(2, 1fr); }
+  /* vertical: 3 up desktop, 2 up mobile */
+  .row.tall { grid-template-columns: repeat(3, 1fr); }
+
+  @media (max-width: 860px) {
+    .row.wide { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .row.tall { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   }
 
-  .grid:last-of-type { margin-bottom: 0; }
+  .work-block { margin-bottom: 72px; }
+  .work-block:last-child { margin-bottom: 0; }
 
-  .clip { position: relative; }
-
-  .clip.wide   { grid-column: span 4; }
-  .clip.narrow { grid-column: span 2; }
+  /* ---------- Video facade ---------- */
+  .clip { display: flex; flex-direction: column; }
 
   .frame {
     position: relative;
@@ -261,12 +308,52 @@
     border: 1px solid var(--rule);
     overflow: hidden;
     transition: border-color 0.25s ease;
+    cursor: pointer;
   }
-
   .clip:hover .frame { border-color: var(--gold-dim); }
 
-  .frame.ratio-16x9 { aspect-ratio: 16 / 9; }
-  .frame.ratio-9x16 { aspect-ratio: 9 / 16; max-width: 360px; margin: 0 auto; }
+  .frame.r16x9 { aspect-ratio: 16 / 9; }
+  .frame.r9x16 { aspect-ratio: 9 / 16; }
+
+  .frame img.thumb {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.82;
+    transition: opacity 0.25s ease, transform 0.4s ease;
+  }
+  .frame:hover img.thumb { opacity: 1; transform: scale(1.03); }
+
+  .frame .play {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 62px; height: 62px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    background: rgba(10, 10, 10, 0.55);
+    backdrop-filter: blur(3px);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+  }
+  .frame:hover .play { background: var(--gold); transform: translate(-50%, -50%) scale(1.06); }
+  .frame .play::after {
+    content: "";
+    margin-left: 4px;
+    border-left: 15px solid var(--gold);
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    transition: border-left-color 0.2s ease;
+  }
+  .frame:hover .play::after { border-left-color: #0a0a0a; }
+
+  @media (max-width: 640px) {
+    .frame .play { width: 48px; height: 48px; }
+    .frame .play::after { border-left-width: 12px; border-top-width: 7px; border-bottom-width: 7px; }
+  }
 
   .frame iframe {
     position: absolute;
@@ -280,182 +367,161 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    gap: 12px;
-    margin-top: 14px;
-    padding: 0 2px;
+    gap: 10px;
+    margin-top: 12px;
   }
-
-  .clip.narrow .caption {
-    max-width: 360px;
-    margin: 14px auto 0;
-  }
-
-  .caption .meta {
-    font-size: 0.85rem;
-    letter-spacing: 0.04em;
-    color: var(--text);
-  }
-
+  .caption .meta { font-size: 0.83rem; letter-spacing: 0.03em; color: var(--text); }
   .caption .meta .type {
     color: var(--gold);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.7rem;
+    font-size: 0.64rem;
     letter-spacing: 0.18em;
     display: block;
     margin-bottom: 4px;
   }
+  .caption .year { font-size: 0.74rem; color: var(--text-dim); white-space: nowrap; }
 
-  .caption .year {
-    font-size: 0.78rem;
-    color: var(--text-dim);
-    white-space: nowrap;
+  @media (max-width: 640px) {
+    .caption .meta { font-size: 0.76rem; }
+    .caption .meta .type { font-size: 0.58rem; letter-spacing: 0.14em; }
   }
 
-  .subsection-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.28em;
+  /* ---------- Process ---------- */
+  .process { border-top: 1px solid var(--rule); background: #080807; }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  @media (max-width: 760px) { .steps { grid-template-columns: 1fr; gap: 22px; } }
+  .step .num {
+    font-family: Georgia, serif;
+    font-size: 2.2rem;
+    color: var(--gold-dim);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .step h4 {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--text-dim);
-    margin-bottom: 36px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--rule);
+    margin-bottom: 10px;
   }
+  .step p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.65; }
 
-  /* ---- Contact ---- */
+  /* ---------- Contact ---------- */
   .contact {
     border-top: 1px solid var(--rule);
-    padding: 100px 32px 60px;
+    padding: 88px 28px 60px;
   }
+  .contact .container { max-width: 620px; }
 
-  .contact .container { max-width: 640px; }
-
-  .contact-intro {
-    text-align: center;
-    margin-bottom: 56px;
-  }
-
-  .contact .eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 24px;
-  }
-
+  .contact-intro { text-align: center; margin-bottom: 44px; }
   .contact h2 {
     font-family: Georgia, "Times New Roman", serif;
     font-weight: 400;
-    font-size: clamp(2rem, 6vw, 4rem);
-    margin-bottom: 24px;
+    font-size: clamp(1.9rem, 6vw, 3.4rem);
+    margin-bottom: 16px;
   }
-
+  .contact-sub {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 460px;
+    margin: 0 auto 22px;
+  }
   .contact-email {
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-size: clamp(1.05rem, 3vw, 1.5rem);
     color: var(--gold);
     border-bottom: 1px solid var(--gold-dim);
-    padding-bottom: 6px;
+    padding-bottom: 5px;
+    word-break: break-word;
   }
 
-  /* ---- Form ---- */
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
+  .contact-form { display: flex; flex-direction: column; gap: 20px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; gap: 20px; } }
 
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-
-  @media (max-width: 600px) {
-    .form-row { grid-template-columns: 1fr; }
-  }
-
-  .field {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
+  .field { display: flex; flex-direction: column; gap: 7px; }
   .field label {
-    font-size: 0.7rem;
+    font-size: 0.66rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--text-dim);
   }
-
   .field input,
   .field textarea,
   .field select {
     background: var(--bg-raised);
     border: 1px solid var(--rule);
     color: var(--text);
-    padding: 12px 14px;
-    font-size: 0.95rem;
+    padding: 13px 14px;
+    font-size: 16px; /* prevents iOS zoom-on-focus */
     font-family: inherit;
     transition: border-color 0.2s ease;
+    width: 100%;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
   }
-
-  .field input:focus,
-  .field textarea:focus,
-  .field select:focus {
+  .field select {
+    background-image: linear-gradient(45deg, transparent 50%, var(--gold-dim) 50%), linear-gradient(135deg, var(--gold-dim) 50%, transparent 50%);
+    background-position: calc(100% - 18px) calc(50% + 2px), calc(100% - 13px) calc(50% + 2px);
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 38px;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus {
     outline: none;
     border-color: var(--gold);
   }
+  .field textarea { resize: vertical; min-height: 110px; }
 
-  .field textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-
-  .form-submit {
-    margin-top: 8px;
-    align-self: flex-start;
-  }
+  .form-submit { margin-top: 4px; width: 100%; }
 
   .form-note {
     font-size: 0.78rem;
     color: var(--text-dim);
-    margin-top: 16px;
     line-height: 1.6;
+    text-align: center;
   }
 
   .socials {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
-    font-size: 0.8rem;
+    gap: 28px;
+    margin-top: 34px;
+    font-size: 0.72rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
   }
-
   .socials a { color: var(--text-dim); }
   .socials a:hover { color: var(--gold); }
 
   footer {
     text-align: center;
-    padding: 40px 32px;
-    font-size: 0.75rem;
+    padding: 34px 28px 100px;
+    font-size: 0.72rem;
     color: var(--text-dim);
     letter-spacing: 0.1em;
   }
+  @media (min-width: 761px) { footer { padding-bottom: 34px; } }
 
-  /* ---- Responsive ---- */
-  @media (max-width: 880px) {
-    .grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .clip.wide, .clip.narrow { grid-column: span 2; }
+  /* ---------- Sticky mobile CTA ---------- */
+  .mobile-cta {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 70;
+    display: none;
+    gap: 10px;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(10, 10, 10, 0.94);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--rule);
   }
-
-  @media (max-width: 520px) {
-    section { padding: 56px 20px; }
-    .hero { padding: 120px 20px 70px; }
-    .grid { grid-template-columns: 1fr; }
-    .clip.wide, .clip.narrow { grid-column: span 1; }
-  }
+  .mobile-cta .btn { flex: 1; padding: 13px 10px; font-size: 0.68rem; letter-spacing: 0.14em; }
+  @media (max-width: 760px) { .mobile-cta { display: flex; } }
 </style>
 </head>
 <body>
@@ -465,8 +531,9 @@
     <div class="logo">USO WANAI <span>VISUALS</span></div>
     <div class="nav-links">
       <a href="#work">Work</a>
+      <a href="#process">Process</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav-cta">Book a Shoot</a>
     </div>
   </nav>
 </header>
@@ -474,15 +541,220 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="container">
-    <div class="eyebrow">Toronto · Cinematography</div>
-    <h1>Stories shot on <em>film</em>,<br>made for the screen.</h1>
-    <p>
-      Videography and color-managed cinematography for music, fashion, and brand work —
-      shot on the Sony FX3.
+    <div class="eyebrow">Toronto &amp; Ottawa · Cinematography</div>
+    <h1>Video that makes your listing<br>look <em>worth the price.</em></h1>
+    <p class="lede">
+      Real estate, brand, and fashion films shot on the Sony FX3 and colour-graded
+      through a managed S-Log3 pipeline — so your work looks like a production,
+      not a phone clip.
     </p>
     <div class="cta-row">
-      <a href="#work" class="btn primary">View Work</a>
-      <a href="#contact" class="btn">Get in Touch</a>
+      <a href="#contact" class="btn primary">Get a Quote</a>
+      <a href="#work" class="btn">See the Work</a>
+    </div>
+    <p class="hero-note">Usually replies within 24 hours · Toronto, Ottawa &amp; surrounding</p>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="trust">
+  <div class="trust-grid">
+    <div class="trust-item"><strong>Sony FX3</strong><span>Cinema Camera</span></div>
+    <div class="trust-item"><strong>S-Log3</strong><span>Colour Managed</span></div>
+    <div class="trust-item"><strong>Drone</strong><span>Aerial Coverage</span></div>
+    <div class="trust-item"><strong>Toronto</strong><span>&amp; Ottawa</span></div>
+  </div>
+</div>
+
+<!-- ============ WORK ============ -->
+<section id="work">
+  <div class="container">
+
+    <div class="section-header">
+      <div>
+        <div class="eyebrow">Selected Work</div>
+        <h2>Real Estate</h2>
+      </div>
+      <p>Listing films and agent-branded content built to stop the scroll and get the showing booked.</p>
+    </div>
+
+    <div class="filmstrip-rule">
+      <div class="holes">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- REAL ESTATE -->
+    <div class="work-block">
+      <div class="row wide">
+        <div class="clip">
+          <div class="frame r16x9" data-id="4XbTj9Fis3c">
+            <img class="thumb" src="https://i.ytimg.com/vi/4XbTj9Fis3c/hqdefault.jpg" alt="Real estate drone film for Sleep Well Management" loading="lazy" width="480" height="360">
+            <div class="play"></div>
+          </div>
+          <div class="caption">
+            <div class="meta"><span class="type">Real Estate · Drone</span>Sleep Well Management</div>
+            <div class="year">2025</div>
+          </div>
+        </div>
+        <div class="clip">
+          <div class="frame r16x9" data-id="64tyeNfjQTE">
+            <img class="thumb" src="https://i.ytimg.com/vi/64tyeNfjQTE/hqdefault.jpg" alt="Real estate listing film" loading="lazy" width="480" height="360">
+            <div class="play"></div>
+          </div>
+          <div class="caption">
+            <div class="meta"><span class="type">Real Estate</span>Listing Film</div>
+            <div class="year">2026</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row tall">
+        <div class="clip">
+          <div class="frame r9x16" data-id="1b0Gy6_x8J4">
+            <img class="thumb" src="https://i.ytimg.com/vi/1b0Gy6_x8J4/hqdefault.jpg" alt="Real estate vertical film, Ottawa" loading="lazy" width="480" height="360">
+            <div class="play"></div>
+          </div>
+          <div class="caption">
+            <div class="meta"><span class="type">Real Estate</span>Ottawa</div>
+            <div class="year">2026</div>
+          </div>
+        </div>
+        <div class="clip">
+          <div class="frame r9x16" data-id="OyTX6XAcsp0">
+            <img class="thumb" src="https://i.ytimg.com/vi/OyTX6XAcsp0/hqdefault.jpg" alt="Real estate vertical film, Toronto" loading="lazy" width="480" height="360">
+            <div class="play"></div>
+          </div>
+          <div class="caption">
+            <div class="meta"><span class="type">Real Estate</span>Toronto</div>
+            <div class="year">2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRAND & COMMERCIAL -->
+    <div class="work-block">
+      <div class="subsection-label">Brand &amp; Commercial Work</div>
+      <div class="row wide">
+        <div class="clip">
+          <div class="frame r16x9" data-id="e01IY63CEAg">
+            <img class="thumb" src="https://i.ytimg.com/vi/e01IY63CEAg/hqdefault.jpg" alt="Commercial film for Center Point Church" loading="lazy" width="480" height="360">
+            <div class="play"></div>
+          </div>
+          <div class="caption">
+            <div class="meta"><span class="type">Commercial</span>Center Point Church</div>
+            <div class="year">2026</div>
+          </div>
+        </div>
+        <div class="clip">
+          <div class="frame r16x9" data-id="q5PS0gL8RWM">
+            <img class="thumb" src="https://i.ytimg.com/vi/q5PS0gL8RWM/hqdefault.jpg" alt="Brand commercial film" loading="lazy" width="480" height="360">
+            <div class="play"></div>
+          </div>
+          <div class="caption">
+            <div class="meta"><span class="type">Commercial</span>Brand Film</div>
+            <div class="year">2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CREATIVE PROJECTS -->
+    <div class="work-block">
+      <div class="subsection-label">Creative Projects</div>
+      <div class="row tall">
+        <div class="clip">
+          <div class="frame r9x16" data-id="NCOVj2wp8HE">
+            <img class="thumb" src="https://i.ytimg.com/vi/NCOVj2wp8HE/hqdefault.jpg" alt="Creative short film" loading="lazy" width="480" height="360">
+            <div class="play"></div>
+          </div>
+          <div class="caption">
+            <div class="meta"><span class="type">Creative</span>Uso Wanai</div>
+            <div class="year">2026</div>
+          </div>
+        </div>
+        <div class="clip">
+          <div class="frame r9x16" data-id="TOVCLlH14L4">
+            <img class="thumb" src="https://i.ytimg.com/vi/TOVCLlH14L4/hqdefault.jpg" alt="Creative short film" loading="lazy" width="480" height="360">
+            <div class="play"></div>
+          </div>
+          <div class="caption">
+            <div class="meta"><span class="type">Creative</span>Uso Wanai</div>
+            <div class="year">2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FASHION -->
+    <div class="work-block">
+      <div class="subsection-label">Fashion</div>
+      <div class="row wide">
+        <div class="clip">
+          <div class="frame r16x9" data-id="q7flcJ4Xl9s">
+            <img class="thumb" src="https://i.ytimg.com/vi/q7flcJ4Xl9s/hqdefault.jpg" alt="Fashion film by Uso Wanai" loading="lazy" width="480" height="360">
+            <div class="play"></div>
+          </div>
+          <div class="caption">
+            <div class="meta"><span class="type">Fashion Film</span>Uso Wanai</div>
+            <div class="year">2026</div>
+          </div>
+        </div>
+        <div class="clip">
+          <div class="frame r16x9" data-id="Vc_dui9H1_E">
+            <img class="thumb" src="https://i.ytimg.com/vi/Vc_dui9H1_E/hqdefault.jpg" alt="Fashion film by Uso Wanai" loading="lazy" width="480" height="360">
+            <div class="play"></div>
+          </div>
+          <div class="caption">
+            <div class="meta"><span class="type">Fashion Film</span>Uso Wanai</div>
+            <div class="year">2026</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row tall">
+        <div class="clip">
+          <div class="frame r9x16" data-id="YaBUnUWg308">
+            <img class="thumb" src="https://i.ytimg.com/vi/YaBUnUWg308/hqdefault.jpg" alt="Fashion model shoot" loading="lazy" width="480" height="360">
+            <div class="play"></div>
+          </div>
+          <div class="caption">
+            <div class="meta"><span class="type">Fashion</span>Model Shoot</div>
+            <div class="year">2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="eyebrow">How It Works</div>
+        <h2>Simple.</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h4>Send the Brief</h4>
+        <p>Tell me what it's for, where it is, and when you need it. I come back with my creative direction — the look, the shots, how it gets cut — and we lock the final plan together before anything is booked.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h4>Shoot Day</h4>
+        <p>I show up with the FX3, lighting, and drone where it's needed. We're working off the plan we agreed on, so nothing on the day is a surprise.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h4>Delivery</h4>
+        <p>Colour-graded cuts sized for wherever they're going — landscape for the site, vertical for Reels and TikTok. Two rounds of revisions included.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -490,168 +762,18 @@
 <!-- ============ ABOUT ============ -->
 <section class="about" id="about">
   <div class="container">
-    <div class="section-header" style="margin-bottom: 24px;">
-      <div>
-        <div class="eyebrow">About</div>
-        <h2>Uso Wanai</h2>
-      </div>
-    </div>
+    <div class="eyebrow">About</div>
+    <h2 style="font-family:Georgia,serif;font-weight:400;font-size:clamp(1.8rem,5vw,2.8rem);margin-bottom:24px;">Uso Wanai</h2>
     <p>
       Uso Wanai means "no lies" — only the truth. That's the standard behind every frame:
-      clean color, deliberate movement, and a finished look that holds up next to any
+      clean colour, deliberate movement, and a finished look that holds up next to any
       production in the city.
     </p>
     <p>
-      Based in Toronto, working across music videos, fashion campaigns, short films,
-      and brand content — with a pipeline built for consistency from set to delivery.
+      Based in Toronto and working across Ottawa and the GTA — real estate, brand content,
+      fashion campaigns, and creative work — with a pipeline built for consistency from set
+      to delivery.
     </p>
-  </div>
-</section>
-
-<!-- ============ WORK ============ -->
-<section id="work">
-  <div class="container">
-
-    <!-- ========== REAL ESTATE ========== -->
-    <div class="section-header">
-      <div>
-        <div class="eyebrow">Selected Work</div>
-        <h2>Real Estate</h2>
-      </div>
-      <p>Property showcases and real estate videos shot on the Sony FX3 with drone and cinematic color grading.</p>
-    </div>
-
-    <div class="filmstrip-rule">
-      <div class="holes">
-        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-      </div>
-    </div>
-
-    <div class="grid">
-
-      <div class="clip narrow">
-        <div class="frame ratio-9x16">
-          <iframe src="https://www.youtube.com/embed/1b0Gy6_x8J4" title="Real Estate — Ottawa — 2026" loading="lazy" allowfullscreen></iframe>
-        </div>
-        <div class="caption">
-          <div class="meta"><span class="type">Real Estate</span>Ottawa</div>
-          <div class="year">2026</div>
-        </div>
-      </div>
-
-      <div class="clip narrow">
-        <div class="frame ratio-9x16">
-          <iframe src="https://www.youtube.com/embed/OyTX6XAcsp0" title="Real Estate — Toronto — 2025" loading="lazy" allowfullscreen></iframe>
-        </div>
-        <div class="caption">
-          <div class="meta"><span class="type">Real Estate</span>Toronto</div>
-          <div class="year">2025</div>
-        </div>
-      </div>
-
-      <div class="clip wide">
-        <div class="frame ratio-16x9">
-          <iframe src="https://www.youtube.com/embed/4XbTj9Fis3c" title="Real Estate — Sleep Well Management — 2025" loading="lazy" allowfullscreen></iframe>
-        </div>
-        <div class="caption">
-          <div class="meta"><span class="type">Real Estate · Drone</span>Sleep Well Management</div>
-          <div class="year">2025</div>
-        </div>
-      </div>
-
-      <div class="clip narrow">
-        <div class="frame ratio-9x16">
-          <iframe src="https://www.youtube.com/embed/64tyeNfjQTE" title="Real Estate — 2026" loading="lazy" allowfullscreen></iframe>
-        </div>
-        <div class="caption">
-          <div class="meta"><span class="type">Real Estate</span>Property</div>
-          <div class="year">2026</div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ========== BRAND & COMMERCIAL ========== -->
-    <div class="subsection-label">Brand &amp; Commercial Work</div>
-
-    <div class="grid">
-
-      <div class="clip wide">
-        <div class="frame ratio-16x9">
-          <iframe src="https://www.youtube.com/embed/e01IY63CEAg" title="Commercial — Center Point Church — 2026" loading="lazy" allowfullscreen></iframe>
-        </div>
-        <div class="caption">
-          <div class="meta"><span class="type">Commercial</span>Center Point Church</div>
-          <div class="year">2026</div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ========== CREATIVE PROJECTS ========== -->
-    <div class="subsection-label">Creative Projects</div>
-
-    <div class="grid">
-
-      <div class="clip narrow">
-        <div class="frame ratio-9x16">
-          <iframe src="https://www.youtube.com/embed/NCOVj2wp8HE" title="Creative Project — 2026" loading="lazy" allowfullscreen></iframe>
-        </div>
-        <div class="caption">
-          <div class="meta"><span class="type">Creative</span>Project</div>
-          <div class="year">2026</div>
-        </div>
-      </div>
-
-      <div class="clip narrow">
-        <div class="frame ratio-9x16">
-          <iframe src="https://www.youtube.com/embed/TOVCLlH14L4" title="Creative Project — 2026" loading="lazy" allowfullscreen></iframe>
-        </div>
-        <div class="caption">
-          <div class="meta"><span class="type">Creative</span>Project</div>
-          <div class="year">2026</div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ========== FASHION ========== -->
-    <div class="subsection-label">Fashion</div>
-
-    <div class="grid">
-
-      <div class="clip wide">
-        <div class="frame ratio-16x9">
-          <iframe src="https://www.youtube.com/embed/q7flcJ4Xl9s" title="Fashion Film — Uso Wanai — 2026" loading="lazy" allowfullscreen></iframe>
-        </div>
-        <div class="caption">
-          <div class="meta"><span class="type">Fashion Film</span>Uso Wanai</div>
-          <div class="year">2026</div>
-        </div>
-      </div>
-
-      <div class="clip narrow">
-        <div class="frame ratio-9x16">
-          <iframe src="https://www.youtube.com/embed/YaBUnUWg308" title="Fashion — Model Shoot — 2025" loading="lazy" allowfullscreen></iframe>
-        </div>
-        <div class="caption">
-          <div class="meta"><span class="type">Fashion</span>Model Shoot</div>
-          <div class="year">2025</div>
-        </div>
-      </div>
-
-      <div class="clip wide">
-        <div class="frame ratio-16x9">
-          <iframe src="https://www.youtube.com/embed/Vc_dui9H1_E" title="Fashion Film — Uso Wanai — 2026" loading="lazy" allowfullscreen></iframe>
-        </div>
-        <div class="caption">
-          <div class="meta"><span class="type">Fashion Film</span>Uso Wanai</div>
-          <div class="year">2026</div>
-        </div>
-      </div>
-
-    </div>
-
   </div>
 </section>
 
@@ -662,19 +784,25 @@
     <div class="contact-intro">
       <div class="eyebrow">Get In Touch</div>
       <h2>Let's make something.</h2>
+      <p class="contact-sub">
+        Tell me what you're shooting and when. I'll come back with a quote and availability —
+        usually within 24 hours.
+      </p>
       <a class="contact-email" href="mailto:hello@usowanai.com">hello@usowanai.com</a>
     </div>
 
     <form class="contact-form" action="https://formspree.io/f/mykabzyw" method="POST">
+      <input type="hidden" name="_subject" value="New inquiry — usowanaivisuals.com">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
       <div class="form-row">
         <div class="field">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
+          <input type="text" id="name" name="name" autocomplete="name" required>
         </div>
         <div class="field">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required>
         </div>
       </div>
 
@@ -683,15 +811,15 @@
           <label for="project-type">Project Type</label>
           <select id="project-type" name="project-type" required>
             <option value="" disabled selected>Select one</option>
+            <option value="Real Estate">Real Estate</option>
+            <option value="Brand / Commercial">Brand / Commercial</option>
+            <option value="Fashion / Creative">Fashion / Creative</option>
             <option value="Music Video">Music Video</option>
-            <option value="Fashion / Brand Film">Fashion / Brand Film</option>
-            <option value="Short Film">Short Film</option>
-            <option value="Commercial">Commercial</option>
             <option value="Other">Other</option>
           </select>
         </div>
         <div class="field">
-          <label for="budget">Estimated Budget</label>
+          <label for="budget">Budget</label>
           <select id="budget" name="budget">
             <option value="" disabled selected>Select one</option>
             <option value="Under $500">Under $500</option>
@@ -705,20 +833,21 @@
 
       <div class="field">
         <label for="message">Tell me about the project</label>
-        <textarea id="message" name="message" required placeholder="What are you working on, and when do you need it delivered?"></textarea>
+        <textarea id="message" name="message" required placeholder="What are you shooting, where, and when do you need it delivered?"></textarea>
       </div>
 
       <button type="submit" class="btn primary form-submit">Send Inquiry</button>
-    </form>
 
-    <p class="form-note" style="text-align: center; margin-top: 32px;">
-      Prefer Instagram? DM
-      <a href="https://www.instagram.com/usowanai.visuals/" target="_blank" rel="noopener">@usowanai.visuals</a>
-      and I'll get back to you there.
-    </p>
+      <p class="form-note">
+        Prefer Instagram? DM
+        <a href="https://www.instagram.com/usowanai.visuals/" target="_blank" rel="noopener">@usowanai.visuals</a>
+        and I'll get back to you there.
+      </p>
+    </form>
 
     <div class="socials">
       <a href="https://www.instagram.com/usowanai.visuals/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:hello@usowanai.com">Email</a>
     </div>
 
   </div>
@@ -727,6 +856,43 @@
 <footer>
   &copy; 2026 Uso Wanai Visuals. All rights reserved.
 </footer>
+
+<!-- Sticky mobile CTA -->
+<div class="mobile-cta">
+  <a href="#contact" class="btn primary">Get a Quote</a>
+  <a href="https://www.instagram.com/usowanai.visuals/" class="btn" target="_blank" rel="noopener">DM Me</a>
+</div>
+
+<script>
+  // Click-to-load YouTube. Keeps the page fast — no iframes until asked for.
+  document.querySelectorAll('.frame[data-id]').forEach(function (frame) {
+    frame.addEventListener('click', function () {
+      if (frame.dataset.loaded) return;
+      frame.dataset.loaded = '1';
+      var id = frame.dataset.id;
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+      iframe.setAttribute('title', 'Uso Wanai Visuals video');
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      iframe.setAttribute('allowfullscreen', '');
+      frame.innerHTML = '';
+      frame.appendChild(iframe);
+      frame.style.cursor = 'default';
+    });
+  });
+
+  // If a thumbnail 404s, fall back to the default still.
+  document.querySelectorAll('img.thumb').forEach(function (img) {
+    img.addEventListener('error', function () {
+      var src = img.getAttribute('src');
+      if (src.indexOf('hqdefault') > -1) {
+        img.src = src.replace('hqdefault', '0');
+      } else {
+        img.style.display = 'none';
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
