@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lion Dixon-McDermid — Short-Form Creator Portfolio</title>
+<meta name="description" content="Short-form video creator, on-camera host and editor based in Toronto. Scripts, shoots, hosts and edits.">
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-raised: #131210;
+    --gold: #c9a84c;
+    --gold-dim: #8a7338;
+    --text: #f2efe8;
+    --text-dim: #9a958a;
+    --rule: rgba(201, 168, 76, 0.18);
+    --maxw: 1080px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { background: var(--bg); color: var(--text); font-family: "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  section { padding: 64px 0; border-bottom: 1px solid var(--rule); }
+  .eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 14px; }
+  h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; line-height: 1.1; }
+  h1 { font-size: clamp(2.2rem, 7vw, 4.2rem); max-width: 820px; }
+  h1 em, h2 em { color: var(--gold); font-style: italic; }
+  h2 { font-size: clamp(1.7rem, 4.5vw, 2.6rem); margin-bottom: 14px; }
+  .lede { color: var(--text-dim); font-size: 1.05rem; max-width: 620px; margin-top: 20px; }
+  .muted { color: var(--text-dim); }
+  .section-intro { color: var(--text-dim); max-width: 640px; margin-bottom: 32px; }
+
+  .btn { display: inline-block; padding: 14px 26px; font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid var(--gold-dim); color: var(--text); min-height: 48px; }
+  .btn:hover { border-color: var(--gold); color: var(--gold); text-decoration: none; }
+  .btn.primary { background: var(--gold); color: #0a0a0a; border-color: var(--gold); font-weight: 700; }
+  .btn.primary:hover { background: transparent; color: var(--gold); }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+
+  .hero { padding: 96px 0 64px; }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .stat { padding: 26px 16px; text-align: center; border-right: 1px solid var(--rule); }
+  .stat:last-child { border-right: 0; }
+  .stat strong { display: block; font-family: Georgia, serif; font-weight: 400; font-size: clamp(1.6rem, 4vw, 2.2rem); color: var(--gold); line-height: 1.1; }
+  .stat span { display: block; margin-top: 8px; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); }
+  @media (max-width: 700px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: 0; }
+    .stat:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+  }
+  .stats-note { font-size: 0.78rem; color: var(--text-dim); margin-top: 12px; }
+
+  /* Story */
+  .story { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  @media (max-width: 800px) { .story { grid-template-columns: 1fr; gap: 24px; } }
+  .timeline { list-style: none; border-left: 1px solid var(--gold-dim); padding-left: 22px; }
+  .timeline li { position: relative; padding-bottom: 20px; }
+  .timeline li::before { content: ""; position: absolute; left: -27px; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); }
+  .timeline b { display: block; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+
+  /* Video grids */
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 860px) { .grid3 { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+  @media (max-width: 520px) { .grid3.ig { grid-template-columns: 1fr; } }
+
+  .ig-card { background: var(--bg-raised); border: 1px solid var(--rule); padding: 0; min-width: 0; }
+  .ig-card .instagram-media { margin: 0 !important; min-width: 0 !important; width: 100% !important; max-width: 100% !important; border-radius: 0 !important; }
+  .ig-meta { padding: 12px 14px; display: flex; justify-content: space-between; gap: 10px; font-size: 0.82rem; }
+  .ig-meta strong { color: var(--gold); font-weight: 700; }
+
+  .frame { position: relative; width: 100%; aspect-ratio: 9 / 16; background: var(--bg-raised); border: 1px solid var(--rule); overflow: hidden; cursor: pointer; }
+  .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
+  .frame .play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; border-radius: 50%; border: 1px solid var(--gold); background: rgba(10,10,10,0.55); display: flex; align-items: center; justify-content: center; pointer-events: none; }
+  .frame .play::after { content: ""; margin-left: 4px; border-left: 14px solid var(--gold); border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
+  .frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .cap { margin-top: 10px; font-size: 0.82rem; }
+  .cap .type { display: block; color: var(--gold); font-weight: 700; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 2px; }
+
+  /* Plan */
+  .plan { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  @media (max-width: 760px) { .plan { grid-template-columns: 1fr; } }
+  .idea { border: 1px solid var(--rule); background: var(--bg-raised); padding: 22px; }
+  .idea .num { font-family: Georgia, serif; color: var(--gold-dim); font-size: 1.6rem; line-height: 1; margin-bottom: 10px; }
+  .idea h3 { font-size: 1rem; margin-bottom: 6px; }
+  .idea p { color: var(--text-dim); font-size: 0.9rem; }
+  .idea .fit { margin-top: 10px; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 760px) { .skills { grid-template-columns: 1fr; gap: 16px; } }
+  .skills h4 { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .skills p { color: var(--text-dim); font-size: 0.92rem; }
+
+  .contact { text-align: center; border-bottom: 0; }
+  .contact .big { font-size: clamp(1.1rem, 3vw, 1.5rem); }
+  footer { text-align: center; padding: 30px 24px 50px; font-size: 0.72rem; color: var(--text-dim); letter-spacing: 0.1em; }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Portfolio · Video Creator, UGC &amp; Social · StackAdapt</div>
+    <h1>I launch channels from zero and <em>make people stop scrolling.</em></h1>
+    <p class="lede">
+      I'm Lion Dixon-McDermid, a Toronto short-form creator. I script, shoot, host and edit
+      everything myself, and I work on a daily posting cycle. Below: verified numbers, the videos behind them,
+      client editing work, and what I'd ship for StackAdapt in week one.
+    </p>
+    <div class="cta-row">
+      <a href="#results" class="btn primary">See the Numbers</a>
+      <a href="mailto:dixon.mcdermid@gmail.com" class="btn">Email Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section id="results" style="padding-top:0;border-bottom:0;">
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><strong>833K</strong><span>views on one reel</span></div>
+      <div class="stat"><strong>1.6M+</strong><span>views in first 7 weeks</span></div>
+      <div class="stat"><strong>23</strong><span>reels in 7 weeks</span></div>
+      <div class="stat"><strong>30M+</strong><span>lifetime views, all accounts</span></div>
+    </div>
+    <p class="stats-note">First three are public on Instagram <a href="https://www.instagram.com/archivedbylion/" target="_blank" rel="noopener">@archivedbylion</a> (June–July 2026). Lifetime total includes earlier TikTok and live-stream accounts under MTVLION.</p>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section>
+  <div class="container story">
+    <div>
+      <div class="eyebrow">Why this matters for you</div>
+      <h2>You're launching a TikTok channel. <em>I've done that from zero.</em></h2>
+      <p class="muted">
+        After building MTVLION through daily live streams and next-day clips, I started a
+        brand-new account with no followers and no ads. Three weeks in, one reel passed 800K views.
+        Same playbook I'd bring to StackAdapt: post consistently, read the retention graph, double
+        down on what holds attention.
+      </p>
+    </div>
+    <ul class="timeline">
+      <li><b>June 5, 2026</b>First reel on a brand-new account, zero followers</li>
+      <li><b>June 13</b>First breakout: 125K views</li>
+      <li><b>June 24–25</b>Back-to-back hits: 514K and 833K views</li>
+      <li><b>Through July</b>23 reels in 7 weeks, 1.6M+ total views</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ TOP REELS ============ -->
+<section id="reels">
+  <div class="container">
+    <div class="eyebrow">Top-performing reels</div>
+    <h2>The videos behind the numbers</h2>
+    <p class="section-intro">Live view counts are on each post. Scripted, filmed and edited by me.</p>
+    <div class="grid3 ig">
+      <div class="ig-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DaBGZr4tLIp/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DaBGZr4tLIp/" target="_blank" rel="noopener">Watch on Instagram</a></blockquote>
+        <div class="ig-meta"><span><strong>833K</strong> views</span><span class="muted">45K likes</span></div>
+      </div>
+      <div class="ig-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZ_GYH0Np4u/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DZ_GYH0Np4u/" target="_blank" rel="noopener">Watch on Instagram</a></blockquote>
+        <div class="ig-meta"><span><strong>514K</strong> views</span><span class="muted">19K likes</span></div>
+      </div>
+      <div class="ig-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZiNoSzNuNC/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DZiNoSzNuNC/" target="_blank" rel="noopener">Watch on Instagram</a></blockquote>
+        <div class="ig-meta"><span><strong>125K</strong> views</span><span class="muted">3.2K likes</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENT WORK ============ -->
+<section id="client">
+  <div class="container">
+    <div class="eyebrow">Client editing · UW Visuals</div>
+    <h2>Brand work, cut for vertical</h2>
+    <p class="section-intro">Shot on Sony FX3, edited in Premiere Pro and After Effects, graded in DaVinci Resolve. <a href="https://usowanaivisuals.github.io/usowanaivisuals-site/" target="_blank" rel="noopener">Full studio portfolio →</a></p>
+    <div class="grid3">
+      <div>
+        <div class="frame" data-id="d0gIpTPGeOQ"><img src="https://i.ytimg.com/vi/d0gIpTPGeOQ/hqdefault.jpg" alt="Construction short" loading="lazy"><div class="play"></div></div>
+        <div class="cap"><span class="type">Construction</span>Site Film · 2026</div>
+      </div>
+      <div>
+        <div class="frame" data-id="cXMuxffOLhw"><img src="https://i.ytimg.com/vi/cXMuxffOLhw/hqdefault.jpg" alt="Construction short" loading="lazy"><div class="play"></div></div>
+        <div class="cap"><span class="type">Construction</span>Project Reel · 2026</div>
+      </div>
+      <div>
+        <div class="frame" data-id="1b0Gy6_x8J4"><img src="https://i.ytimg.com/vi/1b0Gy6_x8J4/hqdefault.jpg" alt="Real estate vertical film" loading="lazy"><div class="play"></div></div>
+        <div class="cap"><span class="type">Real Estate</span>Ottawa · 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAN ============ -->
+<section id="plan">
+  <div class="container">
+    <div class="eyebrow">For StackAdapt</div>
+    <h2>What I'd ship in week one</h2>
+    <p class="section-intro">Four videos to open the channel, then a steady 3–4 a week. Each one is built from the role's brief and StackAdapt's 2026 launches.</p>
+    <div class="plan">
+      <div class="idea">
+        <div class="num">01</div>
+        <h3>"The auction you never see"</h3>
+        <p>First-person explainer: every time a page loads, an auction for the ad slot runs and finishes in about a blink. Real-time bidding, made watchable.</p>
+        <div class="fit">Translate programmatic for everyone</div>
+      </div>
+      <div class="idea">
+        <div class="num">02</div>
+        <h3>"Editor vs. AI"</h3>
+        <p>I edit video for a living, so I race StackAdapt's AI Video Builder to make the same ad. A product demo disguised as a challenge.</p>
+        <div class="fit">Product + on-camera host</div>
+      </div>
+      <div class="idea">
+        <div class="num">03</div>
+        <h3>"Wait, programmatic… mail?"</h3>
+        <p>Programmatic Direct Mail through a trending format: the ad you clicked just showed up in your mailbox.</p>
+        <div class="fit">Trend + AdTech news in 24–48h</div>
+      </div>
+      <div class="idea">
+        <div class="num">04</div>
+        <h3>"What do you actually do?"</h3>
+        <p>A StackAdapt teammate explains their job in 30 seconds, with me directing. A recurring series that builds a bench of on-camera talent.</p>
+        <div class="fit">Direct employees as talent</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section>
+  <div class="container">
+    <div class="eyebrow">How I work</div>
+    <div class="skills">
+      <div><h4>Solo, end to end</h4><p>Writer, camera, host and editor. Daily live streams with a new clip posted from each one the next day.</p></div>
+      <div><h4>Tools</h4><p>Premiere Pro, After Effects, DaVinci Resolve. Sony FX3/FX30, gimbal, lighting, mobile live-stream rig.</p></div>
+      <div><h4>Before video</h4><p>Six years in sales: top 3 regionally at GoodLife, led a team of 6, door-to-door for Bell. I know how to win attention in 5 seconds.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact">
+  <div class="container">
+    <div class="eyebrow">Toronto, ON</div>
+    <h2>Let's talk.</h2>
+    <p class="big"><a href="mailto:dixon.mcdermid@gmail.com">dixon.mcdermid@gmail.com</a></p>
+    <p class="muted" style="margin-top:8px;">(613) 981-5912</p>
+  </div>
+</section>
+
+<footer>&copy; 2026 Lion Dixon-McDermid</footer>
+
+<script>
+  document.querySelectorAll('.frame[data-id]').forEach(function (frame) {
+    frame.addEventListener('click', function () {
+      if (frame.dataset.loaded) return;
+      frame.dataset.loaded = '1';
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + frame.dataset.id + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+      iframe.setAttribute('title', 'Video');
+      iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; web-share');
+      iframe.setAttribute('allowfullscreen', '');
+      frame.innerHTML = '';
+      frame.appendChild(iframe);
+    });
+  });
+</script>
+<script async src="https://www.instagram.com/embed.js"></script>
+</body>
+</html>
